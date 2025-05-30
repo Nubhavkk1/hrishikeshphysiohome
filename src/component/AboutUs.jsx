@@ -1,111 +1,271 @@
-import React from 'react';
-import { Users, Award, Target, Stethoscope, Clock, Heart } from 'lucide-react';
+import { Award,ChartNoAxesCombined , Users, Heart, Target, ThumbsUp, Shield } from 'lucide-react';
 
-export default function AboutSection() {
+export default function AboutUs() {
+  const coreValues = [
+    {
+      icon: <ChartNoAxesCombined  className="w-8 h-8 text-teal-600" />,
+      title: "No 1 Brand In Physiotherapy",
+      description: "We put our patients at the heart of everything we do, ensuring their comfort and wellbeing during treatment."
+    },
+    {
+      icon: <Target className="w-8 h-8 text-teal-600" />,
+      title: "Customized Treatment",
+      description: "Every patient receives a personalized care plan tailored to their specific needs and recovery goals."
+    },
+    {
+      icon: <ThumbsUp className="w-8 h-8 text-teal-600" />,
+      title: "Excellence in Service 10+ Years of Experience  ",
+      description: "We maintain the highest standards in physiotherapy and rehabilitation services across Assam."
+    },
+    {
+      icon: <Shield className="w-8 h-8 text-teal-600" />,
+      title: "We Deal In Physiotherapy Instruments In House",
+      description: "You can buy Orthotics and Prosthetics (Lumber Belt, OA Knee Support, Cervical Belt, Salica Heel Pad) right from our clinic"
+    }
+  ];
+
+  const teamMembers = [
+    {
+      name: "Dr. Hrishikesh",
+      role: "Lead Physiotherapist & Founder",
+      image: "/images/img40.avif"
+    },
+    {
+      name: "Dr. Sarah Sharma",
+      role: "Pediatric Rehabilitation Specialist",
+      image: "/images/img50.avif"
+    },
+    {
+      name: "Dr. Rajesh Kumar",
+      role: "Pain Management Expert",
+      image: "/images/img30.avif"
+    }
+  ];
+
   return (
-    <section id="about-us"className="py-16 bg-gradient-to-br from-blue-50 to-red-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Header */}
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">About <span className="text-blue-600">Hrishikesh's Physio Home</span></h2>
-          <div className="w-24 h-1 bg-red-500 mx-auto mb-6"></div>
-          <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-            We provide physiotherapy services across Assam with 10+ years of experience, dedicated to helping patients achieve optimal health and wellness.
-          </p>
-        </div>
-
-        {/* Main content */}
-        <div className="grid md:grid-cols-2 gap-12 items-center mb-16">
-          <div className="space-y-8">
-            <h3 className="text-2xl font-semibold text-gray-800">Our Commitment to Excellence</h3>
-            <p className="text-gray-600">
-              Our team of skilled therapists and healthcare professionals is dedicated to providing the best physiotherapy and rehabilitation services in the area. At Hrishikesh's Physio Home & Child Rehabilitation Center, our patients are at the heart of everything we do.
-            </p>
-            
-            <div className="flex flex-col md:flex-row items-center md:items-start space-y-4 md:space-y-0 md:space-x-4">
-              <div className="bg-blue-100 p-4 rounded-full flex items-center justify-center w-16 h-16">
-                <Users className="w-8 h-8 text-blue-600" />
-              </div>
-              <div className="text-center md:text-left">
-                <h4 className="font-semibold text-gray-800">Expert Team</h4>
-                <p className="text-gray-600">Our clinic is staffed with experienced physiotherapists and child rehabilitation specialists who are passionate about helping patients achieve their goals.</p>
-              </div>
-            </div>
-            
-            <div className="flex flex-col md:flex-row items-center md:items-start space-y-4 md:space-y-0 md:space-x-4">
-              <div className="bg-red-100 p-4 rounded-full flex items-center justify-center w-16 h-16">
-                <Target className="w-8 h-8 text-red-600" />
-              </div>
-              <div className="text-center md:text-left">
-                <h4 className="font-semibold text-gray-800">Personalized Care</h4>
-                <p className="text-gray-600">We create customized treatment plans that are specifically designed to meet the individual needs of each patient.</p>
-              </div>
-            </div>
-
-            <div className="flex flex-col md:flex-row items-center md:items-start space-y-4 md:space-y-0 md:space-x-4">
-              <div className="bg-blue-100 p-4 rounded-full flex items-center justify-center w-16 h-16">
-                <Award className="w-8 h-8 text-blue-600" />
-              </div>
-              <div className="text-center md:text-left">
-                <h4 className="font-semibold text-gray-800">10+ Years Experience</h4>
-                <p className="text-gray-600">We stay updated with the latest advancements in the field to provide the best possible care.</p>
-              </div>
-            </div>
+    <div id = "about" className="bg-white font-sans">
+      {/* Hero Section */}
+      <div className="bg-gradient-to-r from-teal-600 to-teal-800 text-white py-16 md:py-24">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center max-w-3xl mx-auto">
+            <h1 className="text-4xl md:text-5xl font-bold mb-6">About<br></br> Hrishikesh's Physio Home <br></br> & Child Rehabilitation Center</h1>
+            <p className="text-lg md:text-xl">Dedicated to healing and rehabilitation excellence in Assam for over a decade</p>
           </div>
+        </div>
+      </div>
 
-          {/* Right side image/illustration */}
-          <div className="relative h-96 bg-blue-100 rounded-2xl overflow-hidden shadow-xl">
-            <div className="absolute inset-0 bg-gradient-to-br from-blue-500/20 to-red-500/20"></div>
-            <div className="absolute inset-0 flex items-center justify-center">
-              <div className="w-3/4 h-3/4 bg-white rounded-xl shadow-lg flex items-center justify-center">
-                <div className="text-center p-6">
-                  <div className="mx-auto w-24 h-24 bg-red-100 rounded-full flex items-center justify-center mb-4">
-                    <Heart className="w-12 h-12 text-red-600" />
-                  </div>
-                  <h3 className="text-2xl font-bold text-gray-800 mb-2">Our Mission</h3>
-                  <p className="text-gray-600">To empower patients to overcome pain and physical limitations, enabling them to lead healthier, fulfilling lives.</p>
+      {/* Our Story */}
+      <div className="py-16 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="md:flex md:items-center md:gap-12">
+            <div className="md:w-1/2 mb-8 md:mb-0">
+              <img 
+                src="/images/img20.png" 
+                alt="Physiotherapy center" 
+                className="rounded-lg shadow-lg w-full"
+              />
+            </div>
+            <div className="md:w-1/2">
+              <h2 className="text-3xl font-bold text-gray-800 mb-6">Story</h2>
+              <p className="text-gray-600 mb-6 text-lg">
+                Our lead physiotherapist Hrishikesh Das spent 10 years working in the field of physiotherapy, gaining extensive experience across a wide range of cases. His dedication to helping others and constant drive to improve his skills made him a trusted name among patients and colleagues alike. Over time he developed a special vision for the next step in his career.
+              </p>
+              <p className="text-gray-600 mb-6 text-lg">
+               With this experience and passion, He opened Hrishikesh Physio Home & Child Rehabilitation Center, a clinic designed to meet the unique needs of every patient. The clinic focuses on providing personalized, high-quality care in a comfortable setting, with services tailored for both adults and children. His goal is to offer effective treatment that supports long-term recovery and treat the root cause of thr issue.
+              </p>
+              <div className="flex items-center space-x-4">
+                <div className="bg-rose-200 p-4 rounded-lg text-center flex-1">
+                  <span className="block text-3xl font-bold text-gray-600">10+</span>
+                  <span className="text-gray-600">Years Experience</span>
+                </div>
+                <div className="bg-teal-200 p-4 rounded-lg text-center flex-1">
+                  <span className="block text-3xl font-bold text-gray-600">1000+</span>
+                  <span className="text-gray-800">Happy Patients</span>
+                </div>
+                <div className="bg-orange-200 p-4 rounded-lg text-center flex-1">
+                  <span className="block text-3xl font-bold text-gray-600">5+</span>
+                  <span className="text-gray-600">Expert Staff</span>
                 </div>
               </div>
             </div>
           </div>
         </div>
+      </div>
 
-        {/* Services highlights */}
-        <div className="grid md:grid-cols-3 gap-8 mb-16">
-          <div className="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow flex flex-col items-center">
-            <div className="bg-blue-100 w-20 h-20 rounded-full flex items-center justify-center mb-4">
-              <Stethoscope className="w-10 h-10 text-blue-600" />
-            </div>
-            <h3 className="text-2xl font-semibold text-gray-800 mb-2 text-center">Comprehensive Services</h3>
-            <p className="text-gray-600 text-center">Our clinic offers a wide range of services including pain relief therapy, exercise therapy, pediatric therapy and more.</p>
+      {/* Our Mission */}
+      <div className="py-16 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center max-w-3xl mx-auto mb-12">
+            <h2 className="text-3xl font-bold text-gray-800 mb-4">Our Mission</h2>
+            <p className="text-xl text-teal-700 font-medium italic">
+              "To empower patients to overcome pain and physical limitations, enabling them to lead healthier, fulfilling lives."
+            </p>
           </div>
-
-          <div className="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow flex flex-col items-center">
-            <div className="bg-red-100 w-20 h-20 rounded-full flex items-center justify-center mb-4">
-              <Clock className="w-10 h-10 text-red-600" />
+          
+          <div className="grid md:grid-cols-2 gap-8">
+            <div className="bg-white p-8 rounded-lg shadow-md">
+              <h3 className="text-xl font-semibold mb-4 text-teal-700">What We Do</h3>
+              <p className="text-gray-600 mb-4">
+                At <b>Hrishikesh's Physio Home & Child Rehabilitation Center</b>, we provide comprehensive <b>physiotherapy</b> and <b>rehabilitation</b> services for patients of all ages. Our modern facilities and advanced equipment allow us to deliver the highest standard of care for a wide range of conditions.
+              </p>
+              <p className="text-gray-600">
+                We are specialized in pain <b>relief therapy</b>r, <b>manual therapy</b>,  <b>electric therapy</b>, <b>movement therapy</b>, <b>child rehabilitation</b> and many other rehabilitation programs. Each treatment plan is carefully customized to meet the individual needs of our patients, ensuring the best possible outcomes.
+              </p>
             </div>
-            <h3 className="text-2xl font-semibold text-gray-800 mb-2 text-center">Modern Facilities</h3>
-            <p className="text-gray-600 text-center">We have modern facilities and advanced equipment to provide the highest standard of care for all our patients.</p>
-          </div>
-
-          <div className="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow flex flex-col items-center">
-            <div className="bg-blue-100 w-20 h-20 rounded-full flex items-center justify-center mb-4">
-              <Heart className="w-10 h-10 text-blue-600" />
+            
+            <div className="bg-white p-8 rounded-lg shadow-md">
+              <h3 className="text-xl font-semibold mb-4 text-teal-700">How We Work</h3>
+              <p className="text-gray-600 mb-4">
+                Our clinic is an all-in-one stop for all physiotherapy services. Here we try to understand each patient's unique needs and challenges. Our team of experienced physiotherapists then develops a personalized treatment plan for each patient. 
+              </p>
+              <p className="text-gray-600">
+               We take eccellent care of our patients in our clinic. Our therapists and assistants are always with the patient every step of the way making sure they feel comfortable and at ease. We try to treat the root cause of the problem rather then treating the surface level symtoms.
+              </p>
             </div>
-            <h3 className="text-2xl font-semibold text-gray-800 mb-2 text-center">Comforting Environment</h3>
-            <p className="text-gray-600 text-center">We create a welcoming environment where patients can feel at ease during their treatment sessions.</p>
           </div>
-        </div>
-
-        {/* CTA */}
-        <div className="bg-gradient-to-r from-blue-600 to-red-600 rounded-2xl p-8 md:p-12 text-center text-white">
-          <h3 className="text-2xl md:text-3xl font-bold mb-4">Ready to Start Your Healing Journey?</h3>
-          <p className="text-lg mb-8 max-w-2xl mx-auto">Whether it's recovering from an injury, managing a chronic condition or improving mobility, we are here to help.</p>
-          <button className="bg-white text-blue-600 hover:bg-blue-50 font-semibold py-3 px-8 rounded-full shadow-lg transition-all transform hover:scale-105">
-            BOOK AN APPOINTMENT TODAY
-          </button>
         </div>
       </div>
-    </section>
+
+      {/* Our Core Values */}
+      <div className="py-16 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-gray-600 mb-4">We Provide The Best Phyisiotherapy Service In North East India</h2>
+            <p className="text-lg text-gray-600">We Are Always Guided By Principles And Values To Provide our Patients with World Class Treatment</p>
+          </div>
+          
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {coreValues.map((value, index) => (
+              <div key={index} className="bg-gray-50 p-6 rounded-lg border border-gray-100 hover:border-teal-500 transition text-center">
+                <div className="inline-flex items-center justify-center bg-teal-50 p-3 rounded-full mb-4">
+                  {value.icon}
+                </div>
+                <h3 className="text-lg font-semibold mb-2 text-gray-800">{value.title}</h3>
+                <p className="text-gray-600">{value.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      {/* Meet Our Team */}
+      {/* <div className="py-16 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-gray-800 mb-4">Meet Our Team</h2>
+            <p className="text-lg text-gray-600">Skilled professionals dedicated to your wellbeing</p>
+          </div>
+          
+          <div className="grid md:grid-cols-3 gap-8">
+            {teamMembers.map((member, index) => (
+              <div key={index} className="bg-white rounded-lg overflow-hidden shadow-md transition-transform hover:scale-105">
+                <img 
+                  src={member.image} 
+                  alt={member.name} 
+                  className="w-full h-64 object-cover"
+                />
+                <div className="p-6 text-center">
+                  <h3 className="text-xl font-semibold text-gray-800">{member.name}</h3>
+                  <p className="text-teal-600">{member.role}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+          
+          <div className="mt-12 text-center">
+            <p className="text-lg text-gray-700 mb-6">
+              Our entire team consists of experienced physiotherapists and child rehabilitation specialists who are passionate about helping patients achieve their goals. We stay updated with the latest advancements in the field to provide the best possible care.
+            </p>
+            <button className="bg-teal-600 text-white px-8 py-3 rounded-md font-medium hover:bg-teal-700 transition">
+              BOOK YOUR APPOINTMENT TODAY
+            </button>
+          </div>
+        </div>
+      </div> */}
+
+      {/* Testimonials */}
+      <div className="py-16 bg-teal-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-gray-800 mb-4">What Our Patients Say</h2>
+            <p className="text-lg text-gray-600">Real stories from people we've helped</p>
+          </div>
+          
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="bg-white p-8 rounded-lg shadow-md">
+              <div className="flex items-center text-yellow-400 mb-4">
+                <svg className="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg>
+                <svg className="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg>
+                <svg className="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg>
+                <svg className="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg>
+                <svg className="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg>
+              </div>
+              <p className="text-gray-600 mb-4 italic">
+                "After months of back pain, I found relief at Hrishikesh's Physio Home. Their personalized approach and expert care have made a world of difference. I can now enjoy activities I had given up on."
+              </p>
+              <div>
+                <p className="font-semibold text-gray-800">Priya Sharma</p>
+                <p className="text-gray-500 text-sm">Back Pain Patient</p>
+              </div>
+            </div>
+            
+            <div className="bg-white p-8 rounded-lg shadow-md">
+              <div className="flex items-center text-yellow-400 mb-4">
+                <svg className="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg>
+                <svg className="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg>
+                <svg className="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg>
+                <svg className="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg>
+                <svg className="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg>
+              </div>
+              <p className="text-gray-600 mb-4 italic">
+                "As a parent of a child with special needs, I'm grateful for the pediatric therapy services at Hrishikesh's. Their experienced specialists have helped my son make incredible progress."
+              </p>
+              <div>
+                <p className="font-semibold text-gray-800">Rajiv Borah</p>
+                <p className="text-gray-500 text-sm">Parent of Pediatric Patient</p>
+              </div>
+            </div>
+            
+            <div className="bg-white p-8 rounded-lg shadow-md">
+              <div className="flex items-center text-yellow-400 mb-4">
+                <svg className="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg>
+                <svg className="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg>
+                <svg className="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg>
+                <svg className="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg>
+                <svg className="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg>
+              </div>
+              <p className="text-gray-600 mb-4 italic">
+                "Following my knee surgery, the rehabilitation program at Hrishikesh's was crucial to my recovery. Their expertise and encouraging approach helped me regain strength and mobility faster than expected."
+              </p>
+              <div>
+                <p className="font-semibold text-gray-800">Ankit Das</p>
+                <p className="text-gray-500 text-sm">Post-Surgery Rehabilitation</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* CTA Section */}
+      <div className="py-16 bg-teal-700 text-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center">
+            <h2 className="text-3xl font-bold mb-6">Begin Your Healing Journey Today</h2>
+            {/* <p className="text-lg mb-8 max-w-3xl mx-auto">
+              Experience the difference of our personalized physiotherapy and rehabilitation services. 
+              We're committed to helping you achieve your health goals and improve your quality of life.
+            </p> */}
+            {/* <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <button className="bg-white text-teal-700 px-8 py-3 rounded-md font-semibold hover:bg-gray-100 transition">
+                Book an Appointment
+              </button>
+              <button className="border-2 border-white text-white px-8 py-3 rounded-md font-semibold hover:bg-white hover:bg-opacity-10 transition">
+                Contact Us
+              </button>
+            </div> */}
+          </div>
+        </div>
+      </div>
+    </div>
   );
 }
