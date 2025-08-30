@@ -8,6 +8,10 @@ import Line from './Line'
 import Icon from './Icon'
 import Map from './Map'
 import Footer from './Footer'
+import Inst from './Inst'
+import { Link } from "react-router-dom";
+
+
 
 
 export default function HomePage() {
@@ -46,7 +50,7 @@ export default function HomePage() {
             <div className="flex items-center">
 
               <a href="/" className="flex-shrink-0">
-                <img src="/images/logoxkx.jpg" alt="Hrishikesh's Physio Logo" className="h-10 w-auto" />
+                <img src="/images/logoxkx.jpg" alt="Hrishikesh's Physio Logo" className="h-10 w-10 object-cover rounded-full" />
               </a>
             </div>
             <div className="flex items-center justify-center w-1/3">
@@ -157,7 +161,7 @@ export default function HomePage() {
           <div className="py-4 space-y-2 overflow-y-auto h-full">
             <a
               href="#"
-               onClick={toggleNav} 
+              onClick={toggleNav}
               className="flex items-center px-4 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition duration-300"
             >
               <Home className="w-5 h-5 mr-3" />
@@ -185,7 +189,7 @@ export default function HomePage() {
             </div>
 
             <a
-             onClick={toggleNav} 
+              onClick={toggleNav}
               href="#Gallery"
               className="flex items-center px-4 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition duration-300"
             >
@@ -195,17 +199,17 @@ export default function HomePage() {
 
             <a
               href="#about"
-               onClick={toggleNav} 
+              onClick={toggleNav}
               className="flex items-center px-4 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition duration-300"
             >
               <Users className="w-5 h-5 mr-3" />
               <span className="font-medium">About Us</span>
             </a>
 
-            <a href="#booking"  onClick={toggleNav} className="block px-4 pt-5">
-             
+            <a href="#booking" onClick={toggleNav} className="block px-4 pt-5">
+
               <button className="w-full px-4 py-3 rounded-md bg-blue-600 text-white font-medium hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 transition duration-300 ease-in-out flex items-center justify-center shadow-md">
-             
+
                 <Calendar className="w-5 h-5 mr-2" />
                 Book Appointment
               </button>
@@ -343,7 +347,7 @@ export default function HomePage() {
             <div />
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
-              <button
+              {/* <button
                 className="px-8 py-3 bg-white text-blue-600 rounded-md font-semibold shadow-md hover:bg-gray-100 transition duration-300 flex items-center justify-center"
                 onClick={() => {
                   document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' });
@@ -351,7 +355,21 @@ export default function HomePage() {
               >
                 Our Services
                 <ChevronRight className="ml-1 h-5 w-5" />
-              </button>
+
+                
+              </button> */}
+              
+
+              <div>
+                <Link to="/services">
+                  <button className="bg-blue-600 text-white px-4 py-2 rounded">
+                    Click to see Our Services
+                  </button>
+                </Link>
+              </div>
+
+
+
               <a href="tel:+917002149453" className="w-full sm:w-auto">
                 <button className="w-full px-8 py-3 bg-transparent border-2 border-white text-white rounded-md font-semibold hover:bg-white hover:text-blue-600 transition duration-300 flex items-center justify-center">
                   <PhoneCall className="mr-2 h-5 w-5" />
@@ -439,6 +457,12 @@ export default function HomePage() {
 
       <Line />
       <ImageSlider />
+      <div className="flex justify-center">
+        <Inst
+          facebookPage="profile.php?id=61578228281780"
+          instagramUsername="drhrishikesh"
+        />
+      </div>
 
       {/* Services Cards Section */}
       <section id="services" className="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -594,7 +618,7 @@ export default function HomePage() {
       <Booking />
       < GallerySection />
       <AboutUs />
-      <Footer/>
+      <Footer />
 
     </div>
   );
