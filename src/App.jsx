@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import './App.css'
-import HomePage from './component/ homepage'
+import HomePage from './component/homepage'
 import Service from './component/Service'   // Capitalized
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 
