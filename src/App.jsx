@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import './App.css'
-import HomePage from './component/homepage'
-import Services from './component/services'   // Capitalized
+import HomePage from './component/ homepage'
+import Service from './component/Service'   // Capitalized
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 
 function App() {
@@ -12,7 +12,7 @@ function App() {
     },
     {
       path: "/services",
-      element: <Services />
+      element: <Service />
     }
   ]);
 
