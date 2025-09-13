@@ -10,7 +10,7 @@ import Map from './Map'
 import Footer from './Footer'
 import Inst from './Inst'
 import { Link } from "react-router-dom";
-import Profile from "./profile"
+import Dietitian from './Dietitian'
 
 
 
@@ -467,7 +467,7 @@ export default function HomePage() {
         />
       </div>
       <div>
-      <Profile/>
+      <Dietitian/>
       </div>
 
     {/* Services Cards Section */}
