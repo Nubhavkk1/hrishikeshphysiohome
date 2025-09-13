@@ -10,6 +10,9 @@ import Map from './Map'
 import Footer from './Footer'
 import Inst from './Inst'
 import { Link } from "react-router-dom";
+import Profile from "./profile"
+
+
 
 
 
@@ -463,163 +466,171 @@ export default function HomePage() {
           instagramUsername="drhrishikesh"
         />
       </div>
+      <div>
+      <Profile/>
+      </div>
 
-      {/* Services Cards Section */}
-      <section id="services" className="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-2xl md:text-3xl font-bold text-center mb-12 text-gray-800">Our Specialized Services</h2>
+    {/* Services Cards Section */}
+<section id="services" className="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+  <h2 className="text-2xl md:text-3xl font-bold text-center mb-12 text-gray-800">
+    Our Specialized Services
+  </h2>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-          {/* Physiotherapy Card */}
-          <div className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300 transform hover:-translate-y-1">
-            <div className="p-4 bg-blue-700 text-white text-center">
-              <Activity className="w-10 h-10 mx-auto mb-2" />
-            </div>
-            <div className="p-6">
-              <h3 className="text-xl font-semibold mb-3 text-gray-800">Physiotherapy</h3>
-              <p className="text-gray-600 mb-4">
-                Specialized treatment to restore movement and function affected by injury, illness or disability.
-              </p>
-              {/* <a href="#" className="text-blue-600 font-medium hover:text-blue-800 inline-flex items-center">
-                Learn More
-                <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7"></path>
-                </svg>
-              </a> */}
-            </div>
-            <div className="px-6 pb-6">
-              <img
-                src="https://images.unsplash.com/photo-1649751361457-01d3a696c7e6?w=1200&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTZ8fHBoeXNpb3RoZXJhcGlzdHxlbnwwfHwwfHx8MA%3D%3D"
-                alt="Patient accommodation"
-                className="w-full h-48 object-cover sm:h-40 md:h-40 lg:h-36"
-              />
-            </div>
-          </div>
+  {/* ✅ Single grid wrapper for all cards */}
+  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
 
-          {/* Child Rehabilitation Card */}
-          <div className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300 transform hover:-translate-y-1">
-            <div className="p-4 bg-sky-300 text-white text-center">
-              <Heart className="w-10 h-10 mx-auto mb-2" />
-            </div>
-            <div className="p-6">
-              <h3 className="text-xl font-semibold mb-3 text-gray-800">Child Rehabilitation</h3>
-              <p className="text-gray-600 mb-4">
-                Specialized care for children with developmental, physical, or neurological challenges.
-              </p>
-              {/* <a href="#" className="text-green-600 font-medium hover:text-green-800 inline-flex items-center">
-                Learn More
-                <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7"></path>
-                </svg>
-              </a> */}
-            </div>
-            <div className="px-6 pb-6">
-              <img
-                src="https://plus.unsplash.com/premium_photo-1682089689634-aca38807b52f?w=1200&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8Y2hpbGQlMjBwaHlzaWNhbCUyMHRoZXJhcHl8ZW58MHx8MHx8fDA%3D"
-                alt="Patient accommodation"
-                className="w-full h-48 object-cover sm:h-40 md:h-40 lg:h-36"
-              />
-            </div>
-          </div>
-
-          {/* Pain Management Card */}
-          <div className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300 transform hover:-translate-y-1">
-            <div className="p-4 bg-red-600 text-white text-center">
-              <Shield className="w-10 h-10 mx-auto mb-2" />
-            </div>
-            <div className="p-6">
-              <h3 className="text-xl font-semibold mb-3 text-gray-800">Pain Management</h3>
-              <p className="text-gray-600 mb-4">
-                Comprehensive approaches to reduce pain and improve quality of life for chronic conditions.
-              </p>
-              {/* <a href="#" className="text-red-400 font-medium hover:text-purple-800 inline-flex items-center">
-                Learn More
-                <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7"></path>
-                </svg>
-              </a> */}
-            </div>
-            <div className="px-6 pb-6">
-              <img
-                src="https://images.unsplash.com/photo-1645005512968-0c1fe99f0093?w=1200&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8cGh5c2lvdGhlcmFweXxlbnwwfHwwfHx8MA%3D%3D"
-                alt="Patient accommodation"
-                className="w-full h-48 object-cover sm:h-40 md:h-40 lg:h-36"
-              />
-            </div>
-          </div>
-
-          {/* Patient Accommodation Card */}
-          <div className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300 transform hover:-translate-y-1">
-            <div className="p-4 bg-teal-500 text-white text-center">
-              <Bed className="w-10 h-10 mx-auto mb-2" />
-            </div>
-            <div className="p-6">
-              <h3 className="text-xl font-semibold mb-3 text-gray-800">Comfortable Patient Accommodation</h3>
-              <p className="text-gray-600 mb-4">
-                Well-equipped, comfortable facilities designed for patients requiring extended care.
-              </p>
-              {/* <a href="#" className="text-amber-600 font-medium hover:text-amber-800 inline-flex items-center">
-                Learn More
-                <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7"></path>
-                </svg>
-              </a> */}
-            </div>
-            <div className="px-6 pb-6">
-              <img
-                src="https://images.unsplash.com/photo-1538108149393-fbbd81895907?q=80&w=2953&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                alt="Patient accommodation"
-                className="w-full h-48 object-cover sm:h-40 md:h-40 lg:h-36"
-              />
-            </div>
-          </div>
-
-          <div className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300 transform hover:-translate-y-1">
-            <div className="p-4 bg-yellow-400 text-white text-center">
-              <HeartPulseIcon className="w-10 h-10 mx-auto mb-2" />
-            </div>
-            <div className="p-6">
-              <h3 className="text-xl font-semibold mb-3 text-gray-800">Stroke Rehabilitation & Spinal Chord Injury Rehabilitation</h3>
-              <p className="text-gray-600 mb-4">
-                Our stroke and spine injury rehabilitation programs are designed to help you regain strength, movement, and independence.
-              </p>
-
-            </div>
-            <div className="px-6 pb-6">
-              <img
-                src="https://plus.unsplash.com/premium_photo-1664475561761-849e7871e0b9?w=1200&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8c3Ryb2tlJTIwcGF0aWVudHxlbnwwfHwwfHx8MA%3D%3D"
-                alt="Patient accommodation"
-                className="w-full h-48 object-cover sm:h-40 md:h-40 lg:h-36"
-              />
-            </div>
-          </div>
-
-          <div className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300 transform hover:-translate-y-1">
-            <div className="p-4 bg-rose-400 text-white text-center">
-              < Accessibility className="w-10 h-10 mx-auto mb-2" />
-            </div>
-            <div className="p-6">
-              <h3 className="text-xl font-semibold mb-3 text-gray-800">Wheelchair Accessible Environment</h3>
-              <p className="text-gray-600 mb-4">
-                Our clinic is thoughtfully designed to be fully wheelchair accessible, ensuring ease, comfort, and independence for all patients.
-              </p>
-
-            </div>
-            <div className="px-6 pb-6">
-              <img
-                src="https://images.unsplash.com/photo-1646082275130-347d10885c5f?w=1200&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NTh8fHdoZWVsY2hhaXJ8ZW58MHx8MHx8fDA%3D"
-                alt="Patient accommodation"
-                className="w-full h-48 object-cover sm:h-40 md:h-40 lg:h-36"
-              />
-            </div>
-          </div>
-
-        </div>
-      </section>
-      <Booking />
-      < GallerySection />
-      <AboutUs />
-      <Footer />
-
+    {/* Physiotherapy Card */}
+    <div className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300 transform hover:-translate-y-1">
+      <div className="p-4 bg-blue-700 text-white text-center">
+        <Activity className="w-10 h-10 mx-auto mb-2" />
+      </div>
+      <div className="p-6">
+        <h3 className="text-xl font-semibold mb-3 text-gray-800">Physiotherapy</h3>
+        <p className="text-gray-600 mb-4">
+          Specialized treatment to restore movement and function affected by injury, illness or disability.
+        </p>
+      </div>
+      <div className="px-6 pb-6">
+        <img
+          src="https://plus.unsplash.com/premium_photo-1661901748991-17870b6614af?w=1200&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NDV8fHBoeXNpb3RoZXJhcHl8ZW58MHx8MHx8fDA%3D"
+          alt="Patient accommodation"
+          className="w-full h-48 object-cover sm:h-40 md:h-40 lg:h-36"
+        />
+      </div>
     </div>
+
+    {/* Child Rehabilitation Card */}
+    <div className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300 transform hover:-translate-y-1">
+      <div className="p-4 bg-sky-300 text-white text-center">
+        <Heart className="w-10 h-10 mx-auto mb-2" />
+      </div>
+      <div className="p-6">
+        <h3 className="text-xl font-semibold mb-3 text-gray-800">Child Rehabilitation</h3>
+        <p className="text-gray-600 mb-4">
+          Specialized care for children with developmental, physical, or neurological challenges.
+        </p>
+      </div>
+      <div className="px-6 pb-6">
+        <img
+          src="https://images.unsplash.com/photo-1708687045030-26702e62fc65?w=1200&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Y2hpbGQlMjBwaHlzaW90aGVyYXB5fGVufDB8fDB8fHww"
+          alt="Patient accommodation"
+          className="w-full h-48 object-cover sm:h-40 md:h-40 lg:h-36"
+        />
+      </div>
+    </div>
+
+    {/* ✅ Sports Physiotherapy Card (Middle) */}
+    <div className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300 transform hover:-translate-y-1">
+      <div className="p-4 bg-blue-700 text-white text-center">
+        <Activity className="w-10 h-10 mx-auto mb-2" />
+      </div>
+      <div className="p-6">
+        <h3 className="text-xl font-semibold mb-3 text-gray-800">Sports Physiotherapy</h3>
+        <p className="text-gray-600 mb-4">
+          Sports physiotherapy is a specialized branch that focuses on prevention, treatment, and rehabilitation of sports-related injuries.
+        </p>
+      </div>
+      <div className="px-6 pb-6">
+        <img
+          src="https://images.unsplash.com/photo-1748112444029-de3c77529cd9?w=1200&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mjd8fHNwb3J0cyUyMGluanVyeXxlbnwwfHwwfHx8MA%3D%3D"
+          alt="Sports physiotherapy"
+          className="w-full h-48 object-cover sm:h-40 md:h-40 lg:h-36"
+        />
+      </div>
+    </div>
+
+    {/* Pain Management Card */}
+    <div className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300 transform hover:-translate-y-1">
+      <div className="p-4 bg-red-600 text-white text-center">
+        <Shield className="w-10 h-10 mx-auto mb-2" />
+      </div>
+      <div className="p-6">
+        <h3 className="text-xl font-semibold mb-3 text-gray-800">Pain Management</h3>
+        <p className="text-gray-600 mb-4">
+          Comprehensive approaches to reduce pain and improve quality of life for chronic conditions.
+        </p>
+      </div>
+      <div className="px-6 pb-6">
+        <img
+          src="https://plus.unsplash.com/premium_photo-1663075848781-6ae8daf22936?q=80&w=2671&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+          alt="Pain management"
+          className="w-full h-48 object-cover sm:h-40 md:h-40 lg:h-36"
+        />
+      </div>
+    </div>
+
+    {/* Comfortable Patient Accommodation Card */}
+    <div className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300 transform hover:-translate-y-1">
+      <div className="p-4 bg-teal-500 text-white text-center">
+        <Bed className="w-10 h-10 mx-auto mb-2" />
+      </div>
+      <div className="p-6">
+        <h3 className="text-xl font-semibold mb-3 text-gray-800">Comfortable Patient Accommodation</h3>
+        <p className="text-gray-600 mb-4">
+          Well-equipped, comfortable facilities designed for patients requiring extended care.
+        </p>
+      </div>
+      <div className="px-6 pb-6">
+        <img
+          src="https://images.unsplash.com/photo-1538108149393-fbbd81895907?q=80&w=2953&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+          alt="Patient accommodation"
+          className="w-full h-48 object-cover sm:h-40 md:h-40 lg:h-36"
+        />
+      </div>
+    </div>
+
+    {/* Stroke Rehabilitation & Spinal Cord Injury Card */}
+    <div className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300 transform hover:-translate-y-1">
+      <div className="p-4 bg-yellow-400 text-white text-center">
+        <HeartPulseIcon className="w-10 h-10 mx-auto mb-2" />
+      </div>
+      <div className="p-6">
+        <h3 className="text-xl font-semibold mb-3 text-gray-800">Stroke Rehabilitation & Spinal Cord Injury</h3>
+        <p className="text-gray-600 mb-4">
+          Programs designed to help regain strength, movement, and independence.
+        </p>
+      </div>
+      <div className="px-6 pb-6">
+        <img
+          src="https://media.istockphoto.com/id/1050434764/photo/mature-backache-exam.jpg?s=2048x2048&w=is&k=20&c=06bSIknVXl-K6TkrnbC54QFxrvgHymWsyYxep00FxWg="
+          alt="Stroke rehabilitation"
+          className="w-full h-48 object-cover sm:h-40 md:h-40 lg:h-36"
+        />
+      </div>
+    </div>
+
+    {/* Wheelchair Accessible Environment Card */}
+    <div className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300 transform hover:-translate-y-1">
+      <div className="p-4 bg-rose-400 text-white text-center">
+        <Accessibility className="w-10 h-10 mx-auto mb-2" />
+      </div>
+      <div className="p-6">
+        <h3 className="text-xl font-semibold mb-3 text-gray-800">Wheelchair Accessible Environment</h3>
+        <p className="text-gray-600 mb-4">
+          Fully wheelchair accessible, ensuring comfort and independence for all patients.
+        </p>
+      </div>
+      <div className="px-6 pb-6">
+        <img
+          src="https://cdn.pixabay.com/photo/2016/08/29/23/47/wheelchair-1629490_1280.jpg"
+          alt="Wheelchair accessible"
+          className="w-full h-48 object-cover sm:h-40 md:h-40 lg:h-36"
+        />
+      </div>
+    </div>
+
+  </div>
+</section>
+
+      <Booking/>
+      <GallerySection />
+      <AboutUs/>
+      <div>
+      <profile/>
+      </div>
+      <Footer/>
+   
+      </div>
+      
   );
 }
