@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { ScrollReveal } from './ScrollMotion';
 
 export default function ImageGallery() {
   // Sample data for the image gallery
@@ -11,7 +12,7 @@ export default function ImageGallery() {
     { id: 6, src: "/images/img12.jpg", alt: "Gallery image 6", title: "With Dr. Nani Gopal Mahanta", description: "with the honorable VC of GU " },
     { id: 7, src: "/images/image25.jpg", alt: "Gallery image 1", title: "As Lead Physiotherapist in Gauhati University", description: "During GU Hospital duties as a senior physiotherapist" },
     { id: 8, src: "/images/image30.jpg", alt: "Gallery image 1", title: "Working days at DPRC", description: "At Diganta's Physiotherapy & Child Rehabilitation Center" },
-    { id: 8, src: "/images/free.jpg", alt: "Gallery image 1", title: "During free camp ", description: " Hrishikesh Das as senior physiotherapist during Free camp in rural areas" },
+    { id: 9, src: "/images/free.jpg", alt: "Gallery image 1", title: "During free camp ", description: " Hrishikesh Das as senior physiotherapist during Free camp in rural areas" },
   ];
  
   const [selectedImage, setSelectedImage] = useState(null);
@@ -39,7 +40,9 @@ export default function ImageGallery() {
       {/* Image collage - responsive for mobile */}
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
         {galleryImages.map((image, index) => (
-          <div
+          <ScrollReveal
+            as="div"
+            delay={Math.min(index, 5) * 55}
             key={image.id}
             className={`relative overflow-hidden rounded-lg cursor-pointer transition-all duration-300 hover:shadow-xl h-48 sm:h-40 ${
               selectedImage?.id === image.id ? 'ring-4 ring-blue-500' : ''
@@ -50,13 +53,15 @@ export default function ImageGallery() {
               src={image.src}
               alt={image.alt}
               className="w-full h-full object-cover"
+              loading="lazy"
+              decoding="async"
             />
             {/* Gradient overlay and text that appears on hover/touch */}
             <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 hover:opacity-100 focus:opacity-100 active:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-4 text-white">
               <h3 className="font-semibold text-lg">{image.title}</h3>
               <p className="text-sm">{image.description}</p>
             </div>
-          </div>
+          </ScrollReveal>
         ))}
       </div>
 

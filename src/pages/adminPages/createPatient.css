@@ -1,0 +1,24 @@
+.patient-create-account-section {
+  padding-bottom: 5px;
+  border-bottom: 1px solid #e3edf3;
+}
+
+.patient-create-account-section h2,
+.patient-create-details-section h2 {
+  margin: 0 0 16px;
+  color: #244257;
+  font-size: 17px;
+  font-weight: 750;
+}
+
+.patient-create-details-section {
+  margin-top: 24px;
+}
+
+.patient-create-details-section > .profile-image-control {
+  margin-top: 15px;
+}
+
+.patient-create-account-section .patient-form-grid {
+  margin-top: 0;
+}

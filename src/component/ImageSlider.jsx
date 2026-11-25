@@ -9,21 +9,15 @@ export default function ImageSlider() {
   // Sample images - replace with your actual medical/physio images
   const slides = [
     {
-      url: "/images/img6.png",
+      url: "https://res.cloudinary.com/dlofql51b/image/upload/f_auto/q_auto/file_00000000b0f88210ad04abeb7501ea78_mqeuyc.png",
       alt: "Modern physiotherapy facility",
       caption: "State-of-the-art physiotherapy equipment"
     },
     {
-      url: "/images/img2.png",
+      url: "https://res.cloudinary.com/dlofql51b/image/upload/v1795150466/DSC03496_jypdzz.jpg",
       alt: "Child rehabilitation session",
       caption: "Specialized care for children"
     },
-    {
-      url: "/images/img3.png",
-      alt: "Pain management therapy",
-      caption: "Advanced pain relief treatments"
-    },
-    
     {
       url: "/images/img4.png",
       alt: "Patient accommodation",

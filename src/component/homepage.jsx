@@ -1,16 +1,15 @@
 import { useState, useEffect } from 'react';
-import { Menu, X, Brain, ChevronDown, Phone, Accessibility, HeartPulse, Calendar, PhoneCall, ChevronRight, CheckCircle, Star, Home, Users, Image, Activity, Heart, Shield, Bed, Award, Clock, ArrowRight, HeartPulseIcon } from 'lucide-react';
-import ImageSlider from './ImageSlider';
+import { Menu, X, Brain, ChevronDown, Phone, Accessibility, HeartPulse, Calendar, PhoneCall, ChevronRight, CheckCircle, Star, Home, Users, Image, Activity, Heart, Shield, Bed, Award, Clock, ArrowRight, HeartPulseIcon, LogIn } from 'lucide-react';
 import AboutUs from './AboutUs';
-import Booking from './Booking';
 import GallerySection from './GallerySection'
 import Line from './Line'
 import Icon from './Icon'
 import Map from './Map'
 import Footer from './Footer'
 import Inst from './Inst'
+import ConsultantProfile from './consultantProfile'
 import { Link } from "react-router-dom";
-import Dietitian from './Dietitian'
+import { AnimatedNumber, ScrollReveal } from './ScrollMotion';
 
 
 
@@ -53,16 +52,9 @@ export default function HomePage() {
             <div className="flex items-center">
 
               <a href="/" className="flex-shrink-0">
-                <img src="/images/logoxkx.jpg" alt="Hrishikesh's Physio Logo" className="h-10 w-10 object-cover rounded-full" />
+                <img src="/images/logoxkx.png" alt="Hrishikesh's Physio Logo" className="h-10 w-10 object-cover rounded-full" />
               </a>
             </div>
-            <div className="flex items-center justify-center w-1/3">
-              <img src="/images/logotext1.jpg" alt="Center Image" className="h-9 w-auto" />
-            </div>
-
-
-
-
             {/* Desktop Menu */}
             <div className="hidden md:flex items-center space-x-8">
               <a href="#" className="text-gray-700 hover:text-blue-600 px-3 py-2 text-sm font-medium transition duration-300 ease-in-out border-b-2 border-transparent hover:border-blue-600">
@@ -117,6 +109,13 @@ export default function HomePage() {
                 Book Appointment
               </button>
 
+              <Link
+                to="/login"
+                className="ml-3 inline-flex items-center rounded-md border border-blue-600 px-4 py-2 text-sm font-medium text-blue-700 transition hover:bg-blue-50"
+              >
+                <LogIn className="mr-2 h-4 w-4" />
+                Login
+              </Link>
             </div>
 
             {/* Mobile Menu Button */}
@@ -218,6 +217,15 @@ export default function HomePage() {
               </button>
             </a>
 
+            <Link
+              to="/login"
+              onClick={toggleNav}
+              className="mx-4 mt-2 flex items-center justify-center rounded-md border border-blue-600 px-4 py-3 font-medium text-blue-700 hover:bg-blue-50"
+            >
+              <LogIn className="mr-2 h-5 w-5" />
+              Login
+            </Link>
+
             <div className="absolute bottom-0 w-full p-4 border-t border-gray-200 bg-gray-50">
               <a
                 href="tel:+1234567890"
@@ -230,7 +238,6 @@ export default function HomePage() {
           </div>
         </div>
       </nav><div />
-      <h1 className="bg-blue-400 text-xs font-semibold text-gray-800 text-center">hrishikeshphysiohome.in</h1>
       <div />
       <Line />
       <Icon />
@@ -247,12 +254,16 @@ export default function HomePage() {
           </svg>
         </div>
 
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <ScrollReveal className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="flex flex-col md:flex-row items-center justify-between">
             <div className="md:w-1/2 text-center md:text-left mb-8 md:mb-0">
-              <div className="inline-flex items-center justify-center bg-white bg-opacity-20 px-4 py-2 rounded-full mb-6">
-                <Award className="h-8 w-8 text-yellow-500 mr-2" />
-                <span className="text-yellow-200 font-medium">Trusted Care Since 2014</span>
+              <div className="mb-6 inline-flex items-center gap-3 rounded-full border border-white/30 bg-slate-950/15 px-4 py-2.5 shadow-lg shadow-slate-950/10 backdrop-blur-md">
+                <span className="flex h-9 w-9 items-center justify-center rounded-full bg-amber-300/20 ring-1 ring-amber-100/40">
+                  <Award className="h-5 w-5 text-amber-200" />
+                </span>
+                <span className="text-sm font-bold uppercase tracking-[0.12em] text-white">
+                  Trusted Care <span className="text-amber-200">Since 2014</span>
+                </span>
               </div>
 
               <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-4">
@@ -319,30 +330,30 @@ export default function HomePage() {
                 </div>
               </div>
             </div>
-            <div className="grid grid-cols-2 gap-4 mb-8">
-              <div className="flex items-center">
-                <div className="bg-white bg-opacity-20 rounded-full p-2 mr-3">
-                  <CheckCircle className="h-6 w-6 text-pink-600" />
+            <div className="mb-8 grid grid-cols-2 gap-3 md:gap-4">
+              <div className="group flex min-w-0 flex-col items-center justify-center gap-2 rounded-xl border border-white/20 bg-slate-950/10 p-3 text-center shadow-sm backdrop-blur-sm transition duration-300 hover:-translate-y-0.5 hover:bg-white/15 sm:p-4">
+                <div className="rounded-xl bg-white/15 p-2 ring-1 ring-white/25">
+                  <CheckCircle className="h-5 w-5 text-amber-200" />
                 </div>
-                <span className="text-white">Expert Therapists</span>
+                <span className="text-xs font-semibold leading-snug tracking-wide text-white drop-shadow-sm sm:text-sm">Expert Therapists</span>
               </div>
-              <div className="flex items-center">
-                <div className="bg-white bg-opacity-20 rounded-full p-2 mr-3">
-                  <Users className="h-6 w-6 text-pink-600" />
+              <div className="group flex min-w-0 flex-col items-center justify-center gap-2 rounded-xl border border-white/20 bg-slate-950/10 p-3 text-center shadow-sm backdrop-blur-sm transition duration-300 hover:-translate-y-0.5 hover:bg-white/15 sm:p-4">
+                <div className="rounded-xl bg-white/15 p-2 ring-1 ring-white/25">
+                  <Users className="h-5 w-5 text-cyan-200" />
                 </div>
-                <span className="text-white">Personalized Care</span>
+                <span className="text-xs font-semibold leading-snug tracking-wide text-white drop-shadow-sm sm:text-sm">Personalized Care</span>
               </div>
-              <div className="flex items-center">
-                <div className="bg-white bg-opacity-20 rounded-full p-2 mr-3">
-                  <Calendar className="h-6 w-6 text-yellow-500" />
+              <div className="group flex min-w-0 flex-col items-center justify-center gap-2 rounded-xl border border-white/20 bg-slate-950/10 p-3 text-center shadow-sm backdrop-blur-sm transition duration-300 hover:-translate-y-0.5 hover:bg-white/15 sm:p-4">
+                <div className="rounded-xl bg-white/15 p-2 ring-1 ring-white/25">
+                  <Calendar className="h-5 w-5 text-violet-200" />
                 </div>
-                <span className="text-white">Flexible Scheduling</span>
+                <span className="text-xs font-semibold leading-snug tracking-wide text-white drop-shadow-sm sm:text-sm">Flexible Scheduling</span>
               </div>
-              <div className="flex items-center">
-                <div className="bg-white bg-opacity-20 rounded-full p-2 mr-3">
-                  <Heart className="h-6 w-6 text-yellow-400" />
+              <div className="group flex min-w-0 flex-col items-center justify-center gap-2 rounded-xl border border-white/20 bg-slate-950/10 p-3 text-center shadow-sm backdrop-blur-sm transition duration-300 hover:-translate-y-0.5 hover:bg-white/15 sm:p-4">
+                <div className="rounded-xl bg-white/15 p-2 ring-1 ring-white/25">
+                  <Heart className="h-5 w-5 text-rose-200" />
                 </div>
-                <span className="text-white">Compassionate Care</span>
+                <span className="text-xs font-semibold leading-snug tracking-wide text-white drop-shadow-sm sm:text-sm">Compassionate Care</span>
               </div>
             </div>
             <div />
@@ -396,61 +407,57 @@ export default function HomePage() {
               </a>
             </div> */}
           </div>
-        </div>
+        </ScrollReveal>
 
         {/* Stats bar with enhanced graphics */}
         <div className="w-full bg-blue-800 bg-opacity-30 backdrop-blur-sm mt-6">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
-              <div className="p-4 relative">
-                <div className="absolute inset-0 bg-white bg-opacity-5 rounded-lg transform -rotate-2"></div>
+              <div className="relative rounded-2xl border border-white/15 bg-white/10 p-4 shadow-lg backdrop-blur-sm transition duration-300 hover:-translate-y-1 hover:bg-white/15">
                 <div className="relative z-10">
                   <div className="flex justify-center mb-2">
-                    <div className="bg-gradient-to-r from-purple-600 to-purple-400  rounded-full p-2">
-                      <Calendar className="h-5 w-5 text-white" />
+                    <div className="rounded-2xl bg-gradient-to-br from-amber-300 to-orange-400 p-3 shadow-md shadow-amber-950/20 ring-1 ring-white/40">
+                      <Calendar className="h-5 w-5 text-slate-950" />
                     </div>
                   </div>
-                  <p className="text-yellow-100 font-bold text-3xl md:text-4xl">10+</p>
-                  <p className="text-white text-sm mt-1">Years Experience</p>
+                  <p className="font-serif text-4xl font-bold leading-none tracking-tight text-amber-200 tabular-nums drop-shadow-sm md:text-5xl"><AnimatedNumber value={12} /></p>
+                  <p className="mt-2 text-xs font-semibold uppercase tracking-[0.14em] text-sky-100 sm:text-sm">Years Experience</p>
                 </div>
               </div>
 
-              <div className="p-4 relative">
-                <div className="absolute inset-0 bg-white bg-opacity-5 rounded-lg transform rotate-1"></div>
+              <div className="relative rounded-2xl border border-white/15 bg-white/10 p-4 shadow-lg backdrop-blur-sm transition duration-300 hover:-translate-y-1 hover:bg-white/15">
                 <div className="relative z-10">
                   <div className="flex justify-center mb-2">
-                    <div className="bg-gradient-to-r from-purple-600 to-purple-400 rounded-full p-2">
-                      <Users className="h-5 w-5 text-white" />
+                    <div className="rounded-2xl bg-gradient-to-br from-amber-300 to-orange-400 p-3 shadow-md shadow-amber-950/20 ring-1 ring-white/40">
+                      <Users className="h-5 w-5 text-slate-950" />
                     </div>
                   </div>
-                  <p className="text-yellow-100 font-bold text-3xl md:text-4xl">5000+</p>
-                  <p className="text-white text-sm mt-1">Satisfied Patients</p>
+                  <p className="font-serif text-4xl font-bold leading-none tracking-tight text-amber-200 tabular-nums drop-shadow-sm md:text-5xl"><AnimatedNumber value={5000} /></p>
+                  <p className="mt-2 text-xs font-semibold uppercase tracking-[0.14em] text-sky-100 sm:text-sm">Satisfied Patients</p>
                 </div>
               </div>
 
-              <div className="p-4 relative">
-                <div className="absolute inset-0 bg-white bg-opacity-5 rounded-lg transform -rotate-1"></div>
+              <div className="relative rounded-2xl border border-white/15 bg-white/10 p-4 shadow-lg backdrop-blur-sm transition duration-300 hover:-translate-y-1 hover:bg-white/15">
                 <div className="relative z-10">
                   <div className="flex justify-center mb-2">
-                    <div className="bg-gradient-to-r from-purple-600 to-purple-400  rounded-full p-2">
-                      <Award className="h-5 w-5 text-white" />
+                    <div className="rounded-2xl bg-gradient-to-br from-amber-300 to-orange-400 p-3 shadow-md shadow-amber-950/20 ring-1 ring-white/40">
+                      <Award className="h-5 w-5 text-slate-950" />
                     </div>
                   </div>
-                  <p className="text-yellow-100 font-bold text-3xl md:text-4xl">5+</p>
-                  <p className="text-white text-sm mt-1">Expert Therapists</p>
+                  <p className="font-serif text-4xl font-bold leading-none tracking-tight text-amber-200 tabular-nums drop-shadow-sm md:text-5xl"><AnimatedNumber value={5} /></p>
+                  <p className="mt-2 text-xs font-semibold uppercase tracking-[0.14em] text-sky-100 sm:text-sm">Expert Therapists</p>
                 </div>
               </div>
 
-              <div className="p-4 relative">
-                <div className="absolute inset-0 bg-white bg-opacity-5 rounded-lg transform rotate-2"></div>
+              <div className="relative rounded-2xl border border-white/15 bg-white/10 p-4 shadow-lg backdrop-blur-sm transition duration-300 hover:-translate-y-1 hover:bg-white/15">
                 <div className="relative z-10">
                   <div className="flex justify-center mb-2">
-                    <div className="bg-gradient-to-r from-purple-600 to-purple-400 rounded-full p-2">
-                      <Activity className="h-5 w-5 text-white" />
+                    <div className="rounded-2xl bg-gradient-to-br from-amber-300 to-orange-400 p-3 shadow-md shadow-amber-950/20 ring-1 ring-white/40">
+                      <Activity className="h-5 w-5 text-slate-950" />
                     </div>
                   </div>
-                  <p className="text-yellow-100 font-bold text-3xl md:text-4xl">8+</p>
-                  <p className="text-white text-sm mt-1">Specialized Services</p>
+                  <p className="font-serif text-4xl font-bold leading-none tracking-tight text-amber-200 tabular-nums drop-shadow-sm md:text-5xl"><AnimatedNumber value={8} /></p>
+                  <p className="mt-2 text-xs font-semibold uppercase tracking-[0.14em] text-sky-100 sm:text-sm">Specialized Services</p>
                 </div>
               </div>
             </div>
@@ -459,28 +466,68 @@ export default function HomePage() {
       </header>
 
       <Line />
-      <ImageSlider />
-      <div className="flex justify-center">
+      <ScrollReveal as="section" aria-label="Hrishikesh Physio Home" className="bg-slate-100 py-8 sm:py-10">
+        <div className="mx-auto w-[90%] max-w-7xl overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-lg lg:w-3/4">
+          <img
+            src="https://res.cloudinary.com/dlofql51b/image/upload/v1795188664/file_0000000020808207ad0e409c416af682_w01ovr.png"
+            alt="Hrishikesh Physio Home and Child Rehabilitation Center"
+            className="block h-auto w-full"
+          />
+        </div>
+      </ScrollReveal>
+      <ScrollReveal as="section" className="bg-white py-16 sm:py-20" aria-labelledby="care-approach-heading">
+        <div className="mx-auto grid max-w-7xl gap-10 px-4 sm:px-6 lg:grid-cols-2 lg:items-center lg:px-8">
+          <ScrollReveal>
+            <p className="mb-3 text-sm font-semibold uppercase tracking-[0.2em] text-teal-700">
+              Care that puts you first
+            </p>
+            <h2 id="care-approach-heading" className="text-3xl font-bold leading-tight text-slate-900 sm:text-4xl">
+              Experienced team. Personalized treatment.
+            </h2>
+            <p className="mt-5 text-lg leading-8 text-slate-600">
+              Our experienced physiotherapy team takes time to understand your needs, goals, and daily life.
+              From your first assessment onward, your care is shaped around you—not a one-size-fits-all plan.
+            </p>
+          </ScrollReveal>
+          <div className="grid gap-4 sm:grid-cols-2">
+            <ScrollReveal as="article" className="rounded-2xl bg-teal-50 p-6" delay={80}>
+              <Award className="mb-4 h-8 w-8 text-teal-700" aria-hidden="true" />
+              <h3 className="text-lg font-semibold text-slate-900">Experienced professionals</h3>
+              <p className="mt-2 leading-7 text-slate-600">
+                Skilled therapists bring thoughtful, hands-on guidance to every stage of your recovery.
+              </p>
+            </ScrollReveal>
+            <ScrollReveal as="article" className="rounded-2xl bg-sky-50 p-6" delay={150}>
+              <HeartPulse className="mb-4 h-8 w-8 text-sky-700" aria-hidden="true" />
+              <h3 className="text-lg font-semibold text-slate-900">A plan made for you</h3>
+              <p className="mt-2 leading-7 text-slate-600">
+                Treatment is tailored to your condition, comfort, and personal recovery goals.
+              </p>
+            </ScrollReveal>
+          </div>
+        </div>
+      </ScrollReveal>
+      <ScrollReveal className="flex justify-center">
         <Inst
           facebookPage="profile.php?id=61578228281780"
           instagramUsername="drhrishikesh"
         />
-      </div>
-      <div>
-      <Dietitian/>
-      </div>
+      </ScrollReveal>
+      <ScrollReveal>
+        <ConsultantProfile />
+      </ScrollReveal>
 
     {/* Services Cards Section */}
 <section id="services" className="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-  <h2 className="text-2xl md:text-3xl font-bold text-center mb-12 text-gray-800">
+  <ScrollReveal as="h2" className="text-2xl md:text-3xl font-bold text-center mb-12 text-gray-800">
     Our Specialized Services
-  </h2>
+  </ScrollReveal>
 
   {/* ✅ Single grid wrapper for all cards */}
   <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
 
     {/* Physiotherapy Card */}
-    <div className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300 transform hover:-translate-y-1">
+    <ScrollReveal className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300 transform hover:-translate-y-1">
       <div className="p-4 bg-blue-700 text-white text-center">
         <Activity className="w-10 h-10 mx-auto mb-2" />
       </div>
@@ -497,10 +544,10 @@ export default function HomePage() {
           className="w-full h-48 object-cover sm:h-40 md:h-40 lg:h-36"
         />
       </div>
-    </div>
+    </ScrollReveal>
 
     {/* Child Rehabilitation Card */}
-    <div className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300 transform hover:-translate-y-1">
+    <ScrollReveal delay={70} className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300 transform hover:-translate-y-1">
       <div className="p-4 bg-sky-300 text-white text-center">
         <Heart className="w-10 h-10 mx-auto mb-2" />
       </div>
@@ -517,10 +564,10 @@ export default function HomePage() {
           className="w-full h-48 object-cover sm:h-40 md:h-40 lg:h-36"
         />
       </div>
-    </div>
+    </ScrollReveal>
 
     {/* ✅ Sports Physiotherapy Card (Middle) */}
-    <div className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300 transform hover:-translate-y-1">
+    <ScrollReveal delay={140} className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300 transform hover:-translate-y-1">
       <div className="p-4 bg-blue-700 text-white text-center">
         <Activity className="w-10 h-10 mx-auto mb-2" />
       </div>
@@ -537,10 +584,10 @@ export default function HomePage() {
           className="w-full h-48 object-cover sm:h-40 md:h-40 lg:h-36"
         />
       </div>
-    </div>
+    </ScrollReveal>
 
     {/* Pain Management Card */}
-    <div className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300 transform hover:-translate-y-1">
+    <ScrollReveal delay={210} className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300 transform hover:-translate-y-1">
       <div className="p-4 bg-red-600 text-white text-center">
         <Shield className="w-10 h-10 mx-auto mb-2" />
       </div>
@@ -557,10 +604,10 @@ export default function HomePage() {
           className="w-full h-48 object-cover sm:h-40 md:h-40 lg:h-36"
         />
       </div>
-    </div>
+    </ScrollReveal>
 
     {/* Comfortable Patient Accommodation Card */}
-    <div className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300 transform hover:-translate-y-1">
+    <ScrollReveal delay={280} className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300 transform hover:-translate-y-1">
       <div className="p-4 bg-teal-500 text-white text-center">
         <Bed className="w-10 h-10 mx-auto mb-2" />
       </div>
@@ -577,10 +624,10 @@ export default function HomePage() {
           className="w-full h-48 object-cover sm:h-40 md:h-40 lg:h-36"
         />
       </div>
-    </div>
+    </ScrollReveal>
 
     {/* Stroke Rehabilitation & Spinal Cord Injury Card */}
-    <div className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300 transform hover:-translate-y-1">
+    <ScrollReveal delay={350} className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300 transform hover:-translate-y-1">
       <div className="p-4 bg-yellow-400 text-white text-center">
         <HeartPulseIcon className="w-10 h-10 mx-auto mb-2" />
       </div>
@@ -597,10 +644,10 @@ export default function HomePage() {
           className="w-full h-48 object-cover sm:h-40 md:h-40 lg:h-36"
         />
       </div>
-    </div>
+    </ScrollReveal>
 
     {/* Wheelchair Accessible Environment Card */}
-    <div className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300 transform hover:-translate-y-1">
+    <ScrollReveal delay={420} className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300 transform hover:-translate-y-1">
       <div className="p-4 bg-rose-400 text-white text-center">
         <Accessibility className="w-10 h-10 mx-auto mb-2" />
       </div>
@@ -617,12 +664,36 @@ export default function HomePage() {
           className="w-full h-48 object-cover sm:h-40 md:h-40 lg:h-36"
         />
       </div>
-    </div>
+    </ScrollReveal>
 
   </div>
 </section>
 
-      <Booking/>
+      <ScrollReveal as="section" id="booking" className="bg-gradient-to-r from-sky-700 to-teal-600 px-4 py-16 sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-4xl rounded-3xl bg-white p-8 text-center shadow-xl sm:p-12">
+          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-teal-700">Appointments</p>
+          <h2 className="mt-3 text-3xl font-bold text-slate-900 sm:text-4xl">
+            Ready to take the next step?
+          </h2>
+          <p className="mx-auto mt-4 max-w-2xl text-lg leading-7 text-slate-600">
+            Login or register to book appointments and manage your care.
+          </p>
+          <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
+            <Link
+              to="/register"
+              className="inline-flex items-center justify-center rounded-lg bg-teal-700 px-6 py-3 font-semibold text-white transition hover:bg-teal-800"
+            >
+              Register
+            </Link>
+            <Link
+              to="/login"
+              className="inline-flex items-center justify-center rounded-lg border border-teal-700 px-6 py-3 font-semibold text-teal-800 transition hover:bg-teal-50"
+            >
+              Login
+            </Link>
+          </div>
+        </div>
+      </ScrollReveal>
       <GallerySection />
       <AboutUs/>
       <div>

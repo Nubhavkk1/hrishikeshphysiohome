@@ -229,13 +229,9 @@ const PhysiotherapyServices = () => {
           <div className="flex justify-between h-16">
             <div className="flex items-center">
               <a href="/" className="flex-shrink-0">
-                <img src="/images/logoxkx.jpg" alt="Hrishikesh's Physio Logo" className="h-10 w-10 object-cover rounded-full" />
+                <img src="/images/logoxkx.png" alt="Hrishikesh's Physio Logo" className="h-10 w-10 object-cover rounded-full" />
               </a>
             </div>
-            <div className="flex items-center justify-center w-1/3">
-              <img src="/images/logotext1.jpg" alt="Center Image" className="h-9 w-auto" />
-            </div>
-
             {/* Desktop Menu */}
             <div className="hidden md:flex items-center space-x-8">
               <a href="#" className="text-gray-700 hover:text-blue-600 px-3 py-2 text-sm font-medium transition duration-300 ease-in-out border-b-2 border-transparent hover:border-blue-600">
@@ -424,7 +420,7 @@ const PhysiotherapyServices = () => {
           <div className="flex items-center justify-center mb-6">
             <div className="mr-6">
               <img 
-                src="/images/logoxkx.jpg"
+                src="/images/logoxkx.png"
                 alt="Physiotherapy Logo"
                 className="w-20 h-14 md:w-20 md:h-20 "
               />

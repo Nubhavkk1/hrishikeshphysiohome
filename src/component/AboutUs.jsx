@@ -1,4 +1,5 @@
 import { Award,ChartNoAxesCombined , Users, Heart, Target, ThumbsUp, Shield } from 'lucide-react';
+import { AnimatedNumber, ScrollReveal } from './ScrollMotion';
 
 export default function AboutUs() {
   const coreValues = [
@@ -45,22 +46,22 @@ export default function AboutUs() {
   return (
     <div id = "about" className="bg-white font-sans">
       {/* Hero Section */}
-      <div className="bg-gradient-to-r from-teal-600 to-teal-800 text-white py-16 md:py-24">
+      <ScrollReveal as="section" className="bg-gradient-to-r from-teal-600 to-teal-800 text-white py-16 md:py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto">
             <h1 className="text-4xl md:text-5xl font-bold mb-6">About<br></br> Hrishikesh's Physio Home <br></br> & Child Rehabilitation Center</h1>
             <p className="text-lg md:text-xl">Dedicated to healing and rehabilitation excellence in Assam for over a decade</p>
           </div>
         </div>
-      </div>
+      </ScrollReveal>
 
       {/* Our Story */}
-      <div className="py-16 bg-white">
+      <ScrollReveal as="section" className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="md:flex md:items-center md:gap-12">
             <div className="md:w-1/2 mb-8 md:mb-0">
               <img 
-                src="/images/img20.png" 
+                src="https://res.cloudinary.com/dlofql51b/image/upload/f_auto/q_auto/DSC03496_jypdzz.jpg" 
                 alt="Physiotherapy center" 
                 className="rounded-lg shadow-lg w-full"
               />
@@ -75,25 +76,25 @@ export default function AboutUs() {
               </p>
               <div className="flex items-center space-x-4">
                 <div className="bg-rose-200 p-4 rounded-lg text-center flex-1">
-                  <span className="block text-3xl font-bold text-gray-600">10+</span>
+                  <span className="block text-3xl font-bold text-gray-600"><AnimatedNumber value={10} /></span>
                   <span className="text-gray-600">Years Experience</span>
                 </div>
                 <div className="bg-teal-200 p-4 rounded-lg text-center flex-1">
-                  <span className="block text-3xl font-bold text-gray-600">1000+</span>
+                  <span className="block text-3xl font-bold text-gray-600"><AnimatedNumber value={1000} /></span>
                   <span className="text-gray-800">Happy Patients</span>
                 </div>
                 <div className="bg-orange-200 p-4 rounded-lg text-center flex-1">
-                  <span className="block text-3xl font-bold text-gray-600">5+</span>
+                  <span className="block text-3xl font-bold text-gray-600"><AnimatedNumber value={5} /></span>
                   <span className="text-gray-600">Expert Staff</span>
                 </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
+      </ScrollReveal>
 
       {/* Our Mission */}
-      <div className="py-16 bg-gray-50">
+      <ScrollReveal as="section" className="py-16 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-12">
             <h2 className="text-3xl font-bold text-gray-800 mb-4">Our Mission</h2>
@@ -124,10 +125,10 @@ export default function AboutUs() {
             </div>
           </div>
         </div>
-      </div>
+      </ScrollReveal>
 
       {/* Our Core Values */}
-      <div className="py-16 bg-white">
+      <ScrollReveal as="section" className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-gray-600 mb-4">We Provide The Best Phyisiotherapy Service In North East India</h2>
@@ -136,17 +137,17 @@ export default function AboutUs() {
           
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {coreValues.map((value, index) => (
-              <div key={index} className="bg-gray-50 p-6 rounded-lg border border-gray-100 hover:border-teal-500 transition text-center">
+              <ScrollReveal as="div" key={index} delay={index * 70} className="bg-gray-50 p-6 rounded-lg border border-gray-100 hover:border-teal-500 transition text-center">
                 <div className="inline-flex items-center justify-center bg-teal-50 p-3 rounded-full mb-4">
                   {value.icon}
                 </div>
                 <h3 className="text-lg font-semibold mb-2 text-gray-800">{value.title}</h3>
                 <p className="text-gray-600">{value.description}</p>
-              </div>
+              </ScrollReveal>
             ))}
           </div>
         </div>
-      </div>
+      </ScrollReveal>
 
       {/* Meet Our Team */}
       {/* <div className="py-16 bg-gray-50">
@@ -184,7 +185,7 @@ export default function AboutUs() {
       </div> */}
 
       {/* Testimonials */}
-      <div className="py-16 bg-teal-50">
+      <ScrollReveal as="section" className="py-16 bg-teal-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-gray-800 mb-4">What Our Patients Say</h2>
@@ -244,10 +245,10 @@ export default function AboutUs() {
             </div>
           </div>
         </div>
-      </div>
+      </ScrollReveal>
 
       {/* CTA Section */}
-      <div className="py-16 bg-teal-700 text-white">
+      <ScrollReveal as="section" className="py-16 bg-teal-700 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <h2 className="text-3xl font-bold mb-6">Begin Your Healing Journey Today</h2>
@@ -265,7 +266,7 @@ export default function AboutUs() {
             </div> */}
           </div>
         </div>
-      </div>
+      </ScrollReveal>
     </div>
   );
 }
